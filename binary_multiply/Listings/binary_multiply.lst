@@ -1,0 +1,67 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             MULTIPLY, CODE, READONLY
+    2 00000000         ENTRY
+    3 00000000         
+    4 00000000         START
+    5 00000000         
+    6 00000000 E3A01C19        MOV              R1,#6400    ;STORE IN REGISTER 
+                                                            R1 -> 1900H
+    7 00000004 E3A02D32        MOV              R2,#3200    ;STORE IN REGISTER 
+                                                            R2 -> 0C80H
+    8 00000008 E0030291        MUL              R3,R1,R2    ;STORE IN REGISTER 
+                                                            R3 -> 01388000H
+    9 0000000C         
+   10 0000000C EAFFFFFE 
+                       stop    B                stop
+   11 00000010         
+   12 00000010                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\binary_multiply.d -o.\objects\binary_multiply.o -IC:\Keil_v5\ARM\RV31\IN
+C -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EV
+AL SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 
+529" --list=.\listings\binary_multiply.lst binary_multiply.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 2 in file binary_multiply.asm
+   Uses
+      None
+Comment: ENTRY unused
+MULTIPLY 00000000
+
+Symbol: MULTIPLY
+   Definitions
+      At line 1 in file binary_multiply.asm
+   Uses
+      None
+Comment: MULTIPLY unused
+START 00000000
+
+Symbol: START
+   Definitions
+      At line 4 in file binary_multiply.asm
+   Uses
+      None
+Comment: START unused
+stop 0000000C
+
+Symbol: stop
+   Definitions
+      At line 10 in file binary_multiply.asm
+   Uses
+      At line 10 in file binary_multiply.asm
+Comment: stop used once
+4 symbols
+337 symbols in table
