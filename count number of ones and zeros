@@ -1,0 +1,35 @@
+    AREA onezero,code,readonly
+ entry
+ 
+ start
+ 
+      mov r2,#0
+      mov r3,#0
+      mov r7,#1
+      ldr r6,=value
+  loop
+      mov r1,#32
+      ldr r0,[r6],#4
+  loop0
+      movs r0,r0,ror#1
+      bhi ones
+  zeros
+      add r3,r3,#1
+      b loop1
+  ones
+      add r2,r2,#1
+  loop1
+      subs r1,r1,#1
+      bne loop0
+      subs r7,r7,#1
+      cmp r7,#0
+      bne loop
+      
+  back b back
+  nop
+  nop
+  
+ value     dcd 0x111111111,0xAA55AA55
+ end
+ 
+ 
