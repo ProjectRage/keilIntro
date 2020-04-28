@@ -1,0 +1,71 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             SUM,CODE,READONLY
+    2 00000000         ENTRY
+    3 00000000 E3A0100A        MOV              R1, #10
+    4 00000004 E3A01000        MOV              R1, #0
+    5 00000008         LOOP
+    6 00000008 E0822001        ADD              R2,R2,R1
+    7 0000000C E2511001        SUBS             R1,#0x01
+    8 00000010 1AFFFFFC        BNE              LOOP
+    9 00000014 EAFFFFFE 
+                       BACK    B                BACK
+   10 00000018         End
+                       
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\sum_int.d -o.\objects\sum_int.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\A
+RM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 1" --pre
+define="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 529" --list=.\li
+stings\sum_int.lst sum_int.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+BACK 00000014
+
+Symbol: BACK
+   Definitions
+      At line 9 in file sum_int.asm
+   Uses
+      At line 9 in file sum_int.asm
+Comment: BACK used once
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 2 in file sum_int.asm
+   Uses
+      None
+Comment: ENTRY unused
+End 00000018
+
+Symbol: End
+   Definitions
+      At line 10 in file sum_int.asm
+   Uses
+      None
+Comment: End unused
+LOOP 00000008
+
+Symbol: LOOP
+   Definitions
+      At line 5 in file sum_int.asm
+   Uses
+      At line 8 in file sum_int.asm
+Comment: LOOP used once
+SUM 00000000
+
+Symbol: SUM
+   Definitions
+      At line 1 in file sum_int.asm
+   Uses
+      None
+Comment: SUM unused
+5 symbols
+338 symbols in table

@@ -1,0 +1,104 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             SQUARE, CODE, READONLY
+    2 00000000         
+    3 00000000         ENTRY                                ;Mark first instruc
+                                                            tion to execute    
+                                                               
+    4 00000000         START
+    5 00000000         
+    6 00000000 E59F0044        LDR              R0, = TABLE1 ; Load start addre
+                                                            ss of Lookup table 
+                                                               
+    7 00000004 E3A01008        LDR              R1,= 8      ; Load no whose squ
+                                                            are is to be find  
+                                                              
+    8 00000008 E1A01101        MOV              R1,R1,LSL#0x2 ;Generate Addr wi
+                                                            th respect to squar
+                                                            e of given no. 
+    9 0000000C E0800001        ADD              R0, R0, R1  ; Load address of e
+                                                            lement in Lookup ta
+                                                            ble   
+   10 00000010 E5903000        LDR              R3, [R0]    ; Get square of giv
+                                                            en no in R3 
+   11 00000014         
+   12 00000014 E1A00000        NOP
+   13 00000018 E1A00000        NOP
+   14 0000001C E1A00000        NOP
+   15 00000020         
+   16 00000020         ; Lookup table contains Squares of nos from 0 to 10 (in 
+                       hex)   
+   17 00000020         
+   18 00000020 00000000 
+                       TABLE1  DCD              0X00000000  ;  SQUARE OF 0=0   
+                                                            
+   19 00000024 00000001        DCD              0X00000001  ;  SQUARE OF 1=1   
+                                                            
+   20 00000028 00000004        DCD              0X00000004  ;  SQUARE OF 2=4   
+                                                            
+   21 0000002C 00000009        DCD              0X00000009  ;  SQUARE OF 3=9  
+   22 00000030 00000010        DCD              0X00000010  ;  SQUARE OF 4=16  
+                                                            
+   23 00000034 00000019        DCD              0X00000019  ;  SQUARE OF 5=25  
+                                                             
+   24 00000038 00000024        DCD              0X00000024  ;  SQUARE OF 6=36  
+                                                             
+   25 0000003C 00000031        DCD              0X00000031  ;  SQUARE OF 7=49  
+                                                             
+   26 00000040 00000040        DCD              0X00000040  ;  SQUARE OF 8=64  
+                                                             
+   27 00000044 00000051        DCD              0X00000051  ;  SQUARE OF 9=81  
+                                                             
+   28 00000048 00000064        DCD              0X00000064  ;   SQUARE OF 10=10
+                                                            0 
+   29 0000004C         
+   30 0000004C                 END                          ; Mark end of file
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\square.d -o.\objects\square.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM
+\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 1" --prede
+fine="__UVISION_VERSION SETA 529" --list=.\listings\square.lst square.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 3 in file square.asm
+   Uses
+      None
+Comment: ENTRY unused
+SQUARE 00000000
+
+Symbol: SQUARE
+   Definitions
+      At line 1 in file square.asm
+   Uses
+      None
+Comment: SQUARE unused
+START 00000000
+
+Symbol: START
+   Definitions
+      At line 4 in file square.asm
+   Uses
+      None
+Comment: START unused
+TABLE1 00000020
+
+Symbol: TABLE1
+   Definitions
+      At line 18 in file square.asm
+   Uses
+      At line 6 in file square.asm
+Comment: TABLE1 used once
+4 symbols
+338 symbols in table
